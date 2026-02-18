@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Year 5 Months ❤️</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for graphics -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Custom Styles & Animations --- */
+        body {
+            font-family: 'Lato', sans-serif;
+            overflow-x: hidden;
+            background-color: #fff1f2; /* Rose-50 */
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Reveal Screen Animation */
+        .reveal-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #ffe4e6 0%, #fff 100%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+        }
+        .reveal-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Floating Hearts */
+        .heart-float {
+            position: fixed;
+            bottom: -10vh;
+            color: #fb7185; /* Rose-400 */
+            opacity: 0.6;
+            animation: floatUp 15s linear infinite;
+            z-index: -1;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Pulse Animation for Heart Icon */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+        .animate-heartbeat {
+            animation: heartbeat 2s infinite;
+        }
+
+        /* Fade In Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        /* Photo Frame Style */
+        .photo-frame {
+            position: relative;
+            padding: 10px;
+            background: white;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.02);
+            z-index: 10;
+        }
+        .photo-frame:nth-child(even) {
+            transform: rotate(2deg);
+        }
+        .photo-frame:nth-child(even):hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- CONFIGURATION SCRIPT -->
+    <script>
+        const CONFIG = {
+            herName: "Aneesha",
+            meetDate: "2024-09-18T00:00:00", // Start Date
+            todayDate: "2026-02-18", // Milestone Date
+            letter: `My dearest Aneesha,
+
+It’s been exactly 1 year and 5 months since we first met on September 18th, 2024. Looking back, that was the day my life changed for the better.
+
+You are the reason for my smiles, my comfort on bad days, and my favorite person to annoy. From your cute childhood photos to your candid eating moments, I adore every version of you.
+
+Here is to 17 months of us, and to a lifetime more to go.
+
+Happy Anniversary! ❤️
+Aditya`
+        };
+    </script>
+
+    <!-- 1. REVEAL SCREEN -->
+    <div id="reveal-screen" class="reveal-overlay">
+        <div class="relative mb-8">
+            <div class="absolute inset-0 bg-rose-300 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+            <div class="relative bg-white p-6 rounded-full shadow-xl">
+                <i data-lucide="gift" class="w-12 h-12 text-rose-500"></i>
+            </div>
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl text-gray-800 mb-3 text-center px-4">
+            A Surprise for <span class="text-rose-500 font-bold italic" id="reveal-name"></span>
+        </h1>
+        <p class="text-gray-500 mb-8 font-light tracking-wide">1 Year & 5 Months in the making...</p>
+        
+        <button onclick="openGift()" class="group relative px-8 py-4 bg-rose-500 text-white rounded-full font-bold shadow-lg hover:bg-rose-600 transition-all hover:shadow-rose-200 hover:-translate-y-1">
+            <span class="flex items-center gap-2">
+                Tap to Open <i data-lucide="heart" class="w-5 h-5 fill-white animate-heartbeat"></i>
+            </span>
+        </button>
+    </div>
+
+    <!-- 2. MAIN CONTENT -->
+    <div id="main-content" class="min-h-screen relative hidden">
+        
+        <!-- Background Music Control (Optional UI) -->
+        <button class="fixed top-4 right-4 z-50 p-3 bg-white/80 backdrop-blur rounded-full shadow-md text-rose-500 hover:bg-white transition-all">
+            <i data-lucide="music" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-20 pb-10">
+            <!-- Floating hearts container will be injected here via JS -->
+            <div id="hearts-container"></div>
+
+            <div class="fade-in-up" style="animation-delay: 0.2s">
+                <span class="inline-block py-1 px-4 rounded-full bg-rose-100 text-rose-600 text-sm font-bold tracking-widest uppercase mb-6 shadow-sm">
+                    Est. September 18, 2024
+                </span>
+            </div>
+
+            <h1 class="text-5xl md:text-8xl font-bold text-gray-800 mb-4 leading-tight fade-in-up" style="animation-delay: 0.4s">
+                1 Year <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-rose-600">5 Months</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto font-light fade-in-up" style="animation-delay: 0.6s">
+                Counting every beautiful second with you.
+            </p>
+
+            <!-- Live Timer Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl fade-in-up" style="animation-delay: 0.8s">
+                <div class="glass-card p-6 rounded-2xl">
+                    <span id="days" class="block text-4xl md:text-5xl font-bold text-rose-500 mb-1">0</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Days</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <span id="hours" class="block text-4xl md:text-5xl font-bold text-rose-500 mb-1">0</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Hours</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <span id="minutes" class="block text-4xl md:text-5xl font-bold text-rose-500 mb-1">0</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Mins</span>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <span id="seconds" class="block text-4xl md:text-5xl font-bold text-rose-500 mb-1">0</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Secs</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline / Photo Section -->
+        <section class="py-20 px-4 bg-white relative">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-16">
+                    <i data-lucide="camera" class="w-10 h-10 text-rose-400 mx-auto mb-4"></i>
+                    <h2 class="text-4xl font-bold text-gray-800">Our Journey</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
+                    
+                    <!-- Photo 1: Childhood/Cute -->
+                    <div class="photo-frame rounded-lg">
+                        <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100">
+                            <!-- Replace src with your 'Baby Aneesha' photo URL -->
+                            <img src="retouch_2025061801393806.jpg" 
+                                 alt="Childhood" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-center font-serif text-gray-600 mt-4 italic">"The cutest beginning"</p>
+                    </div>
+
+                    <!-- Center Text -->
+                    <div class="text-center space-y-4 py-8">
+                        <div class="w-1 h-16 bg-rose-200 mx-auto rounded-full"></div>
+                        <h3 class="text-2xl font-bold text-rose-500">Sep 18, 2024</h3>
+                        <p class="text-gray-500">The day our paths crossed.</p>
+                        <div class="w-16 h-1 bg-rose-200 mx-auto rounded-full my-4"></div>
+                        <p class="text-gray-500">Today, Feb 18, 2026</p>
+                        <h3 class="text-2xl font-bold text-rose-500">1 Year 5 Months</h3>
+                        <div class="w-1 h-16 bg-rose-200 mx-auto rounded-full"></div>
+                    </div>
+
+                    <!-- Photo 2: Candid/Current -->
+                    <div class="photo-frame rounded-lg">
+                        <div class="aspect-[3/4] overflow-hidden rounded bg-gray-100">
+                            <!-- Replace src with your 'Candid Aneesha' photo URL -->
+                            <img src="retouch_2025050418374576.jpg" 
+                                 alt="Candid" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-center font-serif text-gray-600 mt-4 italic">"And the beautiful now"</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Letter Section -->
+        <section class="py-24 bg-rose-900 text-rose-50 relative overflow-hidden">
+            <!-- Background Blob -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-rose-800 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div class="container mx-auto px-6 max-w-3xl relative z-10 text-center">
+                <i data-lucide="mail-heart" class="w-12 h-12 mx-auto mb-6 text-rose-300 animate-bounce"></i>
+                
+                <h2 class="text-4xl font-serif font-bold mb-10">A Note for You</h2>
+                
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 rounded-3xl shadow-2xl relative">
+                    <!-- Decorative Quote Marks -->
+                    <span class="absolute top-4 left-6 text-6xl opacity-20 font-serif">"</span>
+                    <span class="absolute bottom-[-20px] right-6 text-6xl opacity-20 font-serif rotate-180">"</span>
+                    
+                    <p id="letter-text" class="text-lg md:text-xl leading-relaxed whitespace-pre-line font-light tracking-wide opacity-95">
+                        <!-- Letter injected via JS -->
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-rose-950 py-8 text-center text-rose-300/60 text-sm">
+            <p>Made with love for Aneesha</p>
+            <p class="mt-1 text-xs">Forever & Always</p>
+        </footer>
+    </div>
+
+    <!-- MAIN LOGIC -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // 1. Setup Data
+        document.getElementById('reveal-name').textContent = CONFIG.herName;
+        document.getElementById('letter-text').textContent = CONFIG.letter;
+
+        // 2. Reveal Animation
+        function openGift() {
+            const screen = document.getElementById('reveal-screen');
+            const content = document.getElementById('main-content');
+            
+            screen.classList.add('reveal-hidden');
+            
+            setTimeout(() => {
+                content.classList.remove('hidden');
+                initHearts(); // Start floating hearts
+            }, 500);
+        }
+
+        // 3. Timer Logic
+        function updateTimer() {
+            const startTime = new Date(CONFIG.meetDate).getTime();
+            const now = new Date().getTime();
+            const diff = now - startTime;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = hours;
+            document.getElementById('minutes').innerText = minutes;
+            document.getElementById('seconds').innerText = seconds;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Run immediately
+
+        // 4. Floating Hearts Generator
+        function initHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 15; // Number of hearts
+
+            for (let i = 0; i < heartCount; i++) {
+                createHeart(container);
+            }
+        }
+
+        function createHeart(container) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-float');
+            heart.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`;
+            
+            // Randomize position and animation details
+            const left = Math.random() * 100;
+            const size = Math.random() * 20 + 10; // 10px to 30px
+            const duration = Math.random() * 10 + 10; // 10s to 20s
+            const delay = Math.random() * 10;
+
+            heart.style.left = `${left}%`;
+            heart.style.width = `${size}px`;
+            heart.style.height = `${size}px`;
+            heart.style.animationDuration = `${duration}s`;
+            heart.style.animationDelay = `${delay}s`;
+
+            container.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
