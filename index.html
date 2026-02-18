@@ -152,9 +152,17 @@ Aditya`
     <div id="main-content" class="min-h-screen relative hidden">
         
         <!-- Background Music Control (Optional UI) -->
-        <button class="fixed top-4 right-4 z-50 p-3 bg-white/80 backdrop-blur rounded-full shadow-md text-rose-500 hover:bg-white transition-all">
+       <!-- Music Button -->
+        <button id="musicBtn"
+            class="fixed top-4 right-4 z-50 p-3 bg-white/80 backdrop-blur rounded-full shadow-md text-rose-500 hover:bg-white transition-all">
             <i data-lucide="music" class="w-5 h-5"></i>
         </button>
+
+        <!-- Audio -->
+        <audio id="bgMusic">
+            <source src="ReelAudio-23210.mp3" type="audio/mpeg">
+        </audio>
+
 
         <!-- Hero Section -->
         <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-20 pb-10">
@@ -291,6 +299,19 @@ Aditya`
                 initHearts(); // Start floating hearts
             }, 500);
         }
+        
+        const musicBtn = document.getElementById("musicBtn");
+        const music = document.getElementById("bgMusic");
+
+        musicBtn.addEventListener("click", () => {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        });
+
+
 
         // 3. Timer Logic
         function updateTimer() {
